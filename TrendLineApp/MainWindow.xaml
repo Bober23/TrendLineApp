@@ -1,0 +1,63 @@
+﻿<Window x:Class="TrendLineApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrendLineApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="0,5,0,0" Background="Gainsboro">
+            <StackPanel Orientation="Vertical" >
+                <Label Content="Введите X координаты"></Label>
+                <Label Content="Введите Y координаты"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X1" Width="40" Margin="4"/>
+                <TextBox x:Name="Y1" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X2" Width="40" Margin="4"/>
+                <TextBox x:Name="Y2" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X3" Width="40" Margin="4"/>
+                <TextBox x:Name="Y3" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X4" Width="40" Margin="4"/>
+                <TextBox x:Name="Y4" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X5" Width="40" Margin="4"/>
+                <TextBox x:Name="Y5" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X6" Width="40" Margin="4"/>
+                <TextBox x:Name="Y6" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X7" Width="40" Margin="4"/>
+                <TextBox x:Name="Y7" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X8" Width="40" Margin="4"/>
+                <TextBox x:Name="Y8" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X9" Width="40" Margin="4"/>
+                <TextBox x:Name="Y9" Width="40" Margin="4"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="2">
+                <TextBox x:Name="X10" Width="40" Margin="4"/>
+                <TextBox x:Name="Y10" Width="40" Margin="4"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
