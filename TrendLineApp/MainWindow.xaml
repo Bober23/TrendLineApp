@@ -11,14 +11,32 @@
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Button Margin="3">
+                    <TextBlock x:Name="MakeChartButton" TextAlignment="Center" FontSize="14" TextWrapping="Wrap">Построить графики по заданным точкам</TextBlock>
+                </Button>
+                <Button Margin="3">
+                    <TextBlock x:Name="LoadFromFileButton" TextAlignment="Center" FontSize="14" TextWrapping="Wrap">Загрузить последний набор точек</TextBlock>
+                </Button>
+                <Label Content="Коэффиценты лин. функции" FontSize="14" Background="{x:Null}" FontWeight="Bold"></Label>
+                <Label x:Name="LinearCoefLabel" Content="Введите точки" FontSize="14" Background="{x:Null}" Foreground="#FFB90000"/>
+                <Label Content="Коэффиценты кв. функции" FontSize="14" FontWeight="Bold"></Label>
+                <Label x:Name="SquareCoefLabel" Content="Введите точки" FontSize="14" Background="{x:Null}" Foreground="#FFB90000"/>
+            </StackPanel>
+        </Grid>
         <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="0,5,0,0" Background="Gainsboro">
             <StackPanel Orientation="Vertical" >
                 <Label Content="Введите X координаты"></Label>
                 <Label Content="Введите Y координаты"></Label>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X1" Width="40" Margin="4"/>
-                <TextBox x:Name="Y1" Width="40" Margin="4"/>
+                <TextBox x:Name="X1" Width="40" Margin="4" TextChanged="X1_TextChanged"/>
+                <TextBox x:Name="Y1" Width="40" Margin="4" TextChanged="Y1_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
                 <TextBox x:Name="X2" Width="40" Margin="4"/>
