@@ -28,6 +28,7 @@
                 <Label Content="Коэффиценты кв. функции" FontSize="14" FontWeight="Bold"></Label>
                 <Label x:Name="SquareCoefLabel" Content="Введите точки" FontSize="14" Background="{x:Null}" Foreground="#FFB90000"/>
             </StackPanel>
+            <WpfPlot Grid.Column="1" Name ="MainChart"/>
         </Grid>
         <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="0,5,0,0" Background="Gainsboro">
             <StackPanel Orientation="Vertical" >

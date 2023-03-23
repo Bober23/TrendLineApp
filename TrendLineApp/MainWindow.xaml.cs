@@ -2,7 +2,9 @@
 using System;
 using System.Windows;
 using System.IO;
-
+using ScottPlot;
+using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace TrendLineApp
 {
@@ -255,6 +257,7 @@ namespace TrendLineApp
             var LinearSystemSquare = new LinearSystem3(points);
             LinearSystemSquare.Gauss();
             SquareCoefLabel.Content = "A=" + Math.Round(LinearSystemSquare.coefficents[0],3) + " B=" + Math.Round(LinearSystemSquare.coefficents[1], 3) + " C=" + Math.Round(LinearSystemSquare.coefficents[2], 3);
+            MakeChart(LinearSystem, LinearSystemSquare);
         }
 
         private void LoadFromFileButton_Click(object sender, RoutedEventArgs e)
@@ -311,6 +314,55 @@ namespace TrendLineApp
                 Y10.Text = Convert.ToString(points[9].y);
             }
         }
-
+        
+        //work with graphic
+        private void MakeChart(LinearSystem2 linearSystem, LinearSystem3 squareSystem)
+        {
+            double? maxX = null, minX = null;
+            MainChart.Reset();
+            foreach (var point in points) 
+            {
+                if (point.isValue == true)
+                {
+                    if (maxX == null)
+                    {
+                        maxX = point.x; minX = point.x;
+                    }
+                    else
+                    {
+                        if (point.x < minX)
+                        {
+                            minX = point.x;
+                        }
+                        if (point.x>maxX)
+                        {
+                            maxX = point.x;
+                        }
+                    }
+                    MainChart.Plot.AddPoint(point.x, point.y,System.Drawing.Color.Red);
+                }
+            }
+            double left = minX != null ? (minX > 0 ? left = (double)minX - 2 * (int)points[5].x : (double)minX + 2 * (int)points[5].x) : 0;
+            double right = maxX != null ? (maxX > 0 ? right = (double)maxX + 2 * (int)points[5].x : (double)maxX - 2 * (int)points[5].x) : 0;
+            //making linear graphic
+            var linearX = new double[] { left, right };
+            var linearY = new double[] { left * linearSystem.coefficents[0] + linearSystem.coefficents[1], right * linearSystem.coefficents[0] + linearSystem.coefficents[1] };
+            MainChart.Plot.AddScatter(linearX, linearY,System.Drawing.Color.Blue,1,1);
+            //making square graphic
+            int numberOfPoints = (int)(right-left)*1000;  
+            double[] xPoints = new double[numberOfPoints];
+            double[] yPoints = new double[numberOfPoints];
+            double x = left;
+            double y;
+            for (int i = 0; i<numberOfPoints;i++)
+            {
+                y = Math.Pow(x, 2) * squareSystem.coefficents[0] + x * squareSystem.coefficents[1]+squareSystem.coefficents[2];
+                xPoints[i] = x;
+                yPoints[i] = y;
+                x+=0.001;
+            }
+            MainChart.Plot.AddScatter(xPoints, yPoints,System.Drawing.Color.Green,1,1);
+            MainChart.Refresh();
+        }
     }
 }
