@@ -5,6 +5,7 @@ using System.IO;
 using ScottPlot;
 using System.Windows.Documents;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace TrendLineApp
 {
@@ -30,7 +31,8 @@ namespace TrendLineApp
             {
                 if (Y1.Text!="")
                     points[0].isValue = true;
-                points[0].x = Convert.ToDouble(X1.Text);
+                if (X1.Text!="-")
+                    points[0].x = Convert.ToDouble(X1.Text);
             }
             else
                 points[0].isValue = false;
@@ -41,7 +43,8 @@ namespace TrendLineApp
             {
                 if (Y2.Text != "")
                     points[1].isValue = true;
-                points[1].x = Convert.ToDouble(X2.Text);
+                if (X2.Text != "-")
+                    points[1].x = Convert.ToDouble(X2.Text);
             }
             else
                 points[1].isValue = false;
@@ -52,7 +55,8 @@ namespace TrendLineApp
             {
                 if (Y3.Text != "")
                     points[2].isValue = true;
-                points[2].x = Convert.ToDouble(X3.Text);
+                if (X3.Text != "-")
+                    points[2].x = Convert.ToDouble(X3.Text);
             }
             else
                 points[2].isValue = false;
@@ -63,7 +67,8 @@ namespace TrendLineApp
             {
                 if (Y4.Text != "")
                     points[3].isValue = true;
-                points[3].x = Convert.ToDouble(X4.Text);
+                if (X4.Text != "-")
+                    points[3].x = Convert.ToDouble(X4.Text);
             }
             else
                 points[3].isValue = false;
@@ -74,7 +79,8 @@ namespace TrendLineApp
             {
                 if (Y5.Text != "")
                     points[4].isValue = true;
-                points[4].x = Convert.ToDouble(X5.Text);
+                if (X5.Text != "-")
+                    points[4].x = Convert.ToDouble(X5.Text);
             }
             else
                 points[4].isValue = false;
@@ -85,7 +91,8 @@ namespace TrendLineApp
             {
                 if (Y6.Text != "")
                     points[5].isValue = true;
-                points[5].x = Convert.ToDouble(X6.Text);
+                if (X6.Text != "-")
+                    points[5].x = Convert.ToDouble(X6.Text);
             }
             else
                 points[5].isValue = false;
@@ -96,7 +103,8 @@ namespace TrendLineApp
             {
                 if (Y7.Text != "")
                     points[6].isValue = true;
-                points[6].x = Convert.ToDouble(X7.Text);
+                if (X7.Text != "-")
+                    points[6].x = Convert.ToDouble(X7.Text);
             }
             else
                 points[6].isValue = false;
@@ -107,7 +115,8 @@ namespace TrendLineApp
             {
                 if (Y8.Text != "")
                     points[7].isValue = true;
-                points[7].x = Convert.ToDouble(X8.Text);
+                if (X8.Text != "-")
+                    points[7].x = Convert.ToDouble(X8.Text);
             }
             else
                 points[7].isValue = false;
@@ -118,7 +127,8 @@ namespace TrendLineApp
             {
                 if (Y9.Text != "")
                     points[8].isValue = true;
-                points[8].x = Convert.ToDouble(X9.Text);
+                if (X9.Text != "-")
+                    points[8].x = Convert.ToDouble(X9.Text);
             }
             else
                 points[8].isValue = false;
@@ -129,7 +139,8 @@ namespace TrendLineApp
             {
                 if (Y10.Text != "")
                     points[9].isValue = true;
-                points[9].x = Convert.ToDouble(X10.Text);
+                if (X10.Text != "-")
+                    points[9].x = Convert.ToDouble(X10.Text);
             }
             else
                 points[9].isValue = false;
@@ -142,7 +153,8 @@ namespace TrendLineApp
             {
                 if (X1.Text != "")
                     points[0].isValue = true;
-                points[0].y = Convert.ToDouble(Y1.Text);
+                if (Y1.Text != "-")
+                    points[0].y = Convert.ToDouble(Y1.Text);
             }
             else
                 points[0].isValue = false;
@@ -153,7 +165,8 @@ namespace TrendLineApp
             {
                 if (X2.Text != "")
                     points[1].isValue = true;
-                points[1].y = Convert.ToDouble(Y2.Text);
+                if (Y2.Text != "-")
+                    points[1].y = Convert.ToDouble(Y2.Text);
             }
             else
                 points[1].isValue = false;
@@ -164,7 +177,8 @@ namespace TrendLineApp
             {
                 if (X3.Text != "")
                     points[2].isValue = true;
-                points[2].y = Convert.ToDouble(Y3.Text);
+                if (Y3.Text != "-")
+                    points[2].y = Convert.ToDouble(Y3.Text);
             }
             else
                 points[2].isValue = false;
@@ -175,7 +189,8 @@ namespace TrendLineApp
             {
                 if (X4.Text != "")
                     points[3].isValue = true;
-                points[3].y = Convert.ToDouble(Y4.Text);
+                if (Y4.Text != "-")
+                    points[3].y = Convert.ToDouble(Y4.Text);
             }
             else
                 points[3].isValue = false;
@@ -186,7 +201,8 @@ namespace TrendLineApp
             {
                 if (X5.Text != "")
                     points[4].isValue = true;
-                points[4].y = Convert.ToDouble(Y5.Text);
+                if (Y5.Text != "-")
+                    points[4].y = Convert.ToDouble(Y5.Text);
             }
             else
                 points[4].isValue = false;
@@ -197,7 +213,8 @@ namespace TrendLineApp
             {
                 if (X6.Text != "")
                     points[5].isValue = true;
-                points[5].y = Convert.ToDouble(Y6.Text);
+                if (Y6.Text != "-")
+                    points[5].y = Convert.ToDouble(Y6.Text);
             }
             else
                 points[5].isValue = false;
@@ -208,7 +225,8 @@ namespace TrendLineApp
             {
                 if (X7.Text != "")
                     points[6].isValue = true;
-                points[6].y = Convert.ToDouble(Y7.Text);
+                if (Y7.Text != "-")
+                    points[6].y = Convert.ToDouble(Y7.Text);
             }
             else
                 points[6].isValue = false;
@@ -219,7 +237,8 @@ namespace TrendLineApp
             {
                 if (X8.Text != "")
                     points[7].isValue = true;
-                points[7].y = Convert.ToDouble(Y8.Text);
+                if (Y8.Text != "-")
+                    points[7].y = Convert.ToDouble(Y8.Text);
             }
             else
                 points[7].isValue = false;
@@ -230,7 +249,8 @@ namespace TrendLineApp
             {
                 if (X9.Text != "")
                     points[8].isValue = true;
-                points[8].y = Convert.ToDouble(Y9.Text);
+                if (Y9.Text != "-")
+                    points[8].y = Convert.ToDouble(Y9.Text);
             }
             else
                 points[8].isValue = false;
@@ -241,7 +261,8 @@ namespace TrendLineApp
             {
                 if (X10.Text != "")
                     points[9].isValue = true;
-                points[9].y = Convert.ToDouble(Y10.Text);
+                if (Y10.Text != "-")
+                    points[9].y = Convert.ToDouble(Y10.Text);
             }
             else
                 points[9].isValue = false;
@@ -342,8 +363,8 @@ namespace TrendLineApp
                     MainChart.Plot.AddPoint(point.x, point.y,System.Drawing.Color.Red);
                 }
             }
-            double left = minX != null ? (minX > 0 ? left = (double)minX - 2 * (int)points[5].x : (double)minX + 2 * (int)points[5].x) : 0;
-            double right = maxX != null ? (maxX > 0 ? right = (double)maxX + 2 * (int)points[5].x : (double)maxX - 2 * (int)points[5].x) : 0;
+            double left = minX != null ? (double)minX - Math.Abs(2 * (int)points[5].x): 0;
+            double right = maxX != null ? (double)maxX + Math.Abs(2 * (int)points[5].x) : 0;
             //making linear graphic
             var linearX = new double[] { left, right };
             var linearY = new double[] { left * linearSystem.coefficents[0] + linearSystem.coefficents[1], right * linearSystem.coefficents[0] + linearSystem.coefficents[1] };
@@ -363,6 +384,19 @@ namespace TrendLineApp
             }
             MainChart.Plot.AddScatter(xPoints, yPoints,System.Drawing.Color.Green,1,1);
             MainChart.Refresh();
+        }
+
+        //save from incorrect input
+        private static readonly Regex onlyNumbers = new Regex("[^0-9,-]+"); //regex that matches disallowed text //I dont know wtf it is
+
+        private static bool IsTextAllowed(string text)
+        {
+            return !onlyNumbers.IsMatch(text);
+        }
+
+        private new void PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

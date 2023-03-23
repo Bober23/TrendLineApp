@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrendLineApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Trend Line" Height="450" Width="800" MinHeight="332" MinWidth="680">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -36,46 +36,46 @@
                 <Label Content="Введите Y координаты"></Label>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X1" Width="40" Margin="4" TextChanged="X1_TextChanged"/>
-                <TextBox x:Name="Y1" Width="40" Margin="4" TextChanged="Y1_TextChanged"/>
+                <TextBox x:Name="X1" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X1_TextChanged"/>
+                <TextBox x:Name="Y1" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y1_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X2" Width="40" Margin="4" TextChanged="X2_TextChanged"/>
-                <TextBox x:Name="Y2" Width="40" Margin="4" TextChanged="Y2_TextChanged"/>
+                <TextBox x:Name="X2" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X2_TextChanged"/>
+                <TextBox x:Name="Y2" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y2_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X3" Width="40" Margin="4" TextChanged="X3_TextChanged"/>
-                <TextBox x:Name="Y3" Width="40" Margin="4" TextChanged="Y3_TextChanged"/>
+                <TextBox x:Name="X3" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X3_TextChanged"/>
+                <TextBox x:Name="Y3" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y3_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X4" Width="40" Margin="4" TextChanged="X4_TextChanged"/>
-                <TextBox x:Name="Y4" Width="40" Margin="4" TextChanged="Y4_TextChanged"/>
+                <TextBox x:Name="X4" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X4_TextChanged"/>
+                <TextBox x:Name="Y4" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y4_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X5" Width="40" Margin="4" TextChanged="X5_TextChanged"/>
-                <TextBox x:Name="Y5" Width="40" Margin="4" TextChanged="Y5_TextChanged"/>
+                <TextBox x:Name="X5" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X5_TextChanged"/>
+                <TextBox x:Name="Y5" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y5_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X6" Width="40" Margin="4" TextChanged="X6_TextChanged"/>
-                <TextBox x:Name="Y6" Width="40" Margin="4" TextChanged="Y6_TextChanged"/>
+                <TextBox x:Name="X6" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X6_TextChanged"/>
+                <TextBox x:Name="Y6" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y6_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X7" Width="40" Margin="4" TextChanged="X7_TextChanged"/>
-                <TextBox x:Name="Y7" Width="40" Margin="4" TextChanged="Y7_TextChanged"/>
+                <TextBox x:Name="X7" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X7_TextChanged"/>
+                <TextBox x:Name="Y7" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y7_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X8" Width="40" Margin="4" TextChanged="X8_TextChanged"/>
-                <TextBox x:Name="Y8" Width="40" Margin="4" TextChanged="Y8_TextChanged"/>
+                <TextBox x:Name="X8" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X8_TextChanged"/>
+                <TextBox x:Name="Y8" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y8_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X9" Width="40" Margin="4" TextChanged="X9_TextChanged"/>
-                <TextBox x:Name="Y9" Width="40" Margin="4" TextChanged="Y9_TextChanged"/>
+                <TextBox x:Name="X9" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X9_TextChanged"/>
+                <TextBox x:Name="Y9" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y9_TextChanged"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="2">
-                <TextBox x:Name="X10" Width="40" Margin="4" TextChanged="X10_TextChanged"/>
-                <TextBox x:Name="Y10" Width="40" Margin="4" TextChanged="Y10_TextChanged"/>
+                <TextBox x:Name="X10" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="X10_TextChanged"/>
+                <TextBox x:Name="Y10" PreviewTextInput="PreviewTextInput" Width="40" Margin="4" TextChanged="Y10_TextChanged"/>
             </StackPanel>
-            
+
         </StackPanel>
 
     </Grid>
