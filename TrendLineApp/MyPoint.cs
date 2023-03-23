@@ -8,7 +8,7 @@ namespace LabVMath_1
 {
     class MyPoint
     {
-        public int Id {get; set;}
+        public bool isValue = false;
         public double x { get; set; }
         public double y { get; set; }
         public MyPoint(double x, double y)

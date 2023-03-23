@@ -12,9 +12,17 @@ namespace LabVMath_1
         private static int rank = 2;
         private double[,] A = new double[rank, rank];
         private double[] B = new double[rank];
-        private double[] coefficents= new double[rank];
-        public LinearSystem2(MyPoint[] points)
+        public double[] coefficents= new double[rank];
+        public LinearSystem2(MyPoint[] inputPoints)
         {
+            List<MyPoint> points = new List<MyPoint>();
+            foreach (var point in inputPoints)
+            {
+                if (point.isValue == true)
+                {
+                    points.Add(point);
+                }
+            }
             foreach (var point in points)
             {
                 A[0, 0] += Math.Pow(point.x,2);
@@ -23,7 +31,7 @@ namespace LabVMath_1
                 B[0] += point.y*point.x;
                 B[1] += point.y;
             }
-            A[1, 1] = points.Length;
+            A[1, 1] = points.Count ;
         }
         public void Gauss()
         {
