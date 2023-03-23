@@ -23,29 +23,40 @@ namespace LabVMath_1
         }
         public static MyPoint[] GetPoints()
         {
-            StreamReader File = new StreamReader("Data.dat");
             MyPoint[] points = new MyPoint[10];
-            string? buffer = null;
-            for (int i = 0; i < 10; i++)
+            if (File.Exists("Data.dat"))
             {
-                points[i] = new MyPoint();
-                buffer = File.ReadLine();
-                if (buffer == null) break;
-                if (buffer == "True")
+                StreamReader File = new StreamReader("Data.dat");
+                string? buffer = null;
+                for (int i = 0; i < 10; i++)
                 {
-                    points[i].isValue= true;
+                    points[i] = new MyPoint();
+                    buffer = File.ReadLine();
+                    if (buffer == null) break;
+                    if (buffer == "True")
+                    {
+                        points[i].isValue = true;
+                    }
+                    else
+                    {
+                        points[i].isValue = false;
+                    }
+                    points[i].x = Convert.ToDouble(File.ReadLine());
+                    points[i].y = Convert.ToDouble(File.ReadLine());
+                }
+                File.Close();
+                if (buffer != null)
+                {
+                    return points;
                 }
                 else
                 {
-                    points[i].isValue = false;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        points[i] = new MyPoint();
+                    }
+                    return points;
                 }
-                points[i].x = Convert.ToDouble(File.ReadLine());
-                points[i].y = Convert.ToDouble(File.ReadLine());
-            }
-            File.Close();
-            if (buffer!=null) 
-            {
-                return points;
             }
             else
             {

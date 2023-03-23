@@ -363,27 +363,30 @@ namespace TrendLineApp
                     MainChart.Plot.AddPoint(point.x, point.y,System.Drawing.Color.Red);
                 }
             }
-            double left = minX != null ? (double)minX - Math.Abs(2 * (int)points[5].x): 0;
-            double right = maxX != null ? (double)maxX + Math.Abs(2 * (int)points[5].x) : 0;
-            //making linear graphic
-            var linearX = new double[] { left, right };
-            var linearY = new double[] { left * linearSystem.coefficents[0] + linearSystem.coefficents[1], right * linearSystem.coefficents[0] + linearSystem.coefficents[1] };
-            MainChart.Plot.AddScatter(linearX, linearY,System.Drawing.Color.Blue,1,1);
-            //making square graphic
-            int numberOfPoints = (int)(right-left)*1000;  
-            double[] xPoints = new double[numberOfPoints];
-            double[] yPoints = new double[numberOfPoints];
-            double x = left;
-            double y;
-            for (int i = 0; i<numberOfPoints;i++)
+            if (maxX != null && minX != null)
             {
-                y = Math.Pow(x, 2) * squareSystem.coefficents[0] + x * squareSystem.coefficents[1]+squareSystem.coefficents[2];
-                xPoints[i] = x;
-                yPoints[i] = y;
-                x+=0.001;
+                double left = (double)minX - Math.Abs(2 * (int)points[5].x);
+                double right = (double)maxX + Math.Abs(2 * (int)points[5].x);
+                //making linear graphic
+                var linearX = new double[] { left, right };
+                var linearY = new double[] { left * linearSystem.coefficents[0] + linearSystem.coefficents[1], right * linearSystem.coefficents[0] + linearSystem.coefficents[1] };
+                MainChart.Plot.AddScatter(linearX, linearY, System.Drawing.Color.Blue, 1, 1);
+                //making square graphic
+                int numberOfPoints = (int)(right - left) * 1000;
+                double[] xPoints = new double[numberOfPoints];
+                double[] yPoints = new double[numberOfPoints];
+                double x = left;
+                double y;
+                for (int i = 0; i < numberOfPoints; i++)
+                {
+                    y = Math.Pow(x, 2) * squareSystem.coefficents[0] + x * squareSystem.coefficents[1] + squareSystem.coefficents[2];
+                    xPoints[i] = x;
+                    yPoints[i] = y;
+                    x += 0.001;
+                }
+                MainChart.Plot.AddScatter(xPoints, yPoints, System.Drawing.Color.Green, 1, 1);
+                MainChart.Refresh();
             }
-            MainChart.Plot.AddScatter(xPoints, yPoints,System.Drawing.Color.Green,1,1);
-            MainChart.Refresh();
         }
 
         //save from incorrect input
