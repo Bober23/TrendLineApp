@@ -21,6 +21,7 @@ namespace TrendLineApp
             }
         }
 
+        //points X coordinates input
         private void X1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             if (X1_TextChanged != null && X1.Text != "")
@@ -132,7 +133,7 @@ namespace TrendLineApp
                 points[9].isValue = false;
         }
 
-        //points coordinates input
+        //points Y coordinates input
         private void Y1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             if (Y1_TextChanged != null && Y1.Text != "")
@@ -243,8 +244,11 @@ namespace TrendLineApp
             else
                 points[9].isValue = false;
         }
+
+        //buttons
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            FileFunctions.SetPoints(points);
             var LinearSystem = new LinearSystem2(points);
             LinearSystem.Gauss();
             LinearCoefLabel.Content = "A="+ Math.Round(LinearSystem.coefficents[0], 3) + " B="+Math.Round(LinearSystem.coefficents[1], 3);
@@ -255,7 +259,57 @@ namespace TrendLineApp
 
         private void LoadFromFileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            points = FileFunctions.GetPoints();
+            if (points[0].isValue == true)
+            {
+                X1.Text = Convert.ToString(points[0].x);
+                Y1.Text = Convert.ToString(points[0].y);
+            }
+            if (points[1].isValue == true)
+            {
+                X2.Text = Convert.ToString(points[1].x);
+                Y2.Text = Convert.ToString(points[1].y);
+            }
+            if (points[2].isValue == true)
+            {
+                X3.Text = Convert.ToString(points[2].x);
+                Y3.Text = Convert.ToString(points[2].y);
+            }
+            if (points[3].isValue == true)
+            {
+                X4.Text = Convert.ToString(points[3].x);
+                Y4.Text = Convert.ToString(points[3].y);
+            }
+            if (points[4].isValue == true)
+            {
+                X5.Text = Convert.ToString(points[4].x);
+                Y5.Text = Convert.ToString(points[4].y);
+            }
+            if (points[5].isValue == true)
+            {
+                X6.Text = Convert.ToString(points[5].x);
+                Y6.Text = Convert.ToString(points[5].y);
+            }
+            if (points[6].isValue == true)
+            {
+                X7.Text = Convert.ToString(points[6].x);
+                Y7.Text = Convert.ToString(points[6].y);
+            }
+            if (points[7].isValue == true)
+            {
+                X8.Text = Convert.ToString(points[7].x);
+                Y8.Text = Convert.ToString(points[7].y);
+            }
+            if (points[8].isValue == true)
+            {
+                X9.Text = Convert.ToString(points[8].x);
+                Y9.Text = Convert.ToString(points[8].y);
+            }
+            if (points[9].isValue == true)
+            {
+                X10.Text = Convert.ToString(points[9].x);
+                Y10.Text = Convert.ToString(points[9].y);
+            }
         }
 
     }
